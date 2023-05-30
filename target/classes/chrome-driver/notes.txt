@@ -1,5 +1,0 @@
----------ChromeDriver 113.0.5672.63 (2023-05-03)---------
-Supports Chrome version 113
-Resolved issue 4205: Same object ids in Classic and BiDi [Pri-1]
-Resolved issue 4302: Don't assume that Mapper is in the first tab in ExecuteGetWindowHandles [Pri-1]
-Resolved issue 4356: Chrome 110 not utilizing pref value "download.default_directory" [Pri-1]

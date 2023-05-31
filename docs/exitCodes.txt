@@ -1,3 +1,5 @@
 1 - Database driver not installed
 2 - Database connection fail
 3 - Method is called on a closed result set
+4 - QueryReturn not proper
+5 - Query not proper

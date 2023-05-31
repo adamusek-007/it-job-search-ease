@@ -9,17 +9,16 @@ public class Main {
 	public static void main(String[] args) {
 		DatabaseOperator.checkIsDriverInstalled();
 		DatabaseOperator.setUpConnectionWithDatabase();
-		DatabaseOperator.getBoardsDataFromDatabase();
-		
 		ArrayList<Object> jobsBoardsList = new ArrayList<>();
+		jobsBoardsList = DatabaseOperator.getBoardsDataFromDatabase();
+		
 		
 //		jobsBoardsList.add(new JobBoard());
 //		TODO - WTF here down
-		Set<String> jobBoardsNames = DatabaseOperator.jobBoardsNames;
-		for (String jobBoardName : jobBoardsNames) {
-			
-			System.out.println(jobBoardName);
-		}
+//		Set<String> jobBoardsNames = DatabaseOperator.jobBoardsNames;
+//		for (String jobBoardName : jobBoardsNames) {
+//			System.out.println(jobBoardName);
+//		}
 
 //		try {
 //			ResultSet companies = DatabaseOperator.companiesWebsites;

@@ -32,7 +32,7 @@ public class Job {
 	public void setJobCompany(String jobCompany) {
 		company = jobCompany;
 	}
-	
+
 	public void setJobBoardId(String id) {
 		boardId = id;
 	}

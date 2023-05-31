@@ -1,5 +1,7 @@
 package main.java;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class Main {
@@ -8,9 +10,15 @@ public class Main {
 		DatabaseOperator.checkIsDriverInstalled();
 		DatabaseOperator.setUpConnectionWithDatabase();
 		DatabaseOperator.getBoardsDataFromDatabase();
-		Set<String> jobBoardsNames = DatabaseOperator.jobBoardsData.keySet();
-		for (String j : jobBoardsNames) {
-			System.out.println(j);
+		
+		ArrayList<Object> jobsBoardsList = new ArrayList<>();
+		
+//		jobsBoardsList.add(new JobBoard());
+//		TODO - WTF here down
+		Set<String> jobBoardsNames = DatabaseOperator.jobBoardsNames;
+		for (String jobBoardName : jobBoardsNames) {
+			
+			System.out.println(jobBoardName);
 		}
 
 //		try {

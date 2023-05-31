@@ -49,8 +49,8 @@ public class DatabaseOperator {
 				jobBoardsData.put(jobBoardName, jobBoardWebsite);
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			System.exit(3);
 		}
 	}
 
@@ -70,6 +70,7 @@ public class DatabaseOperator {
 					dbCredentials.userPassword);
 		} catch (SQLException e) {
 			e.printStackTrace();
+			System.exit(2);
 		}
 	}
 

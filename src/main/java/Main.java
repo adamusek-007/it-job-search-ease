@@ -1,17 +1,7 @@
 package main.java;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.PageLoadStrategy;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Main {
 
@@ -19,11 +9,11 @@ public class Main {
 		DatabaseOperator.checkIsDriverInstalled();
 		DatabaseOperator.setUpConnectionWithDatabase();
 		DatabaseOperator.getBoardsDataFromDatabase();
-
+		
 		Set<String> jobBoardsNames = DatabaseOperator.jobBoardsData.keySet();
 
 		for (String j : jobBoardsNames) {
-			System.out.println("Elemele");
+			System.out.println(j);
 		}
 
 //		try {

@@ -1,3 +1,7 @@
+1. Check Is Database Driver Installed
+	1. If installed go further if not exit(1);
+2. 
+
 1. Get job boards
 for (jobBoards.count()) {
 	2. Open the board job

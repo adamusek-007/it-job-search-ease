@@ -14,7 +14,7 @@ public class Main {
 		DatabaseOperator.checkIsDriverInstalled();
 		DatabaseOperator.setUpConnectionWithDatabase();
 		ArrayList<JobBoard> jobsBoardsList = new ArrayList<>();
-		
+
 		jobsBoardsList = DatabaseOperator.getBoardsDataFromDatabase();
 		if (jobsBoardsList.size() > 0) {
 			MyWebDriverOperator.createWebDriver();

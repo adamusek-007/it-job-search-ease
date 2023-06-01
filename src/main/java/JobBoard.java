@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class JobBoard {
+	
 	public int id;
 	public String name = "";
 	public String link = "";

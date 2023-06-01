@@ -29,17 +29,6 @@ public class MyWebDriverOperator {
 		MyWebDriverOperator.driver = driver;
 	}
 
-	public static String find(String any, String type) {
-		WebDriver driver = MyWebDriverOperator.driver;
-		if (type == "attr:title") {
-			return driver.findElement(By.xpath(any)).getAttribute("title");
-		} else if (type == "attr:href") {
-			return driver.findElement(By.xpath(any)).getAttribute("href");
-		} else {
-			return driver.findElement(By.xpath(any)).getText();
-		}
-	}
-	
 	private static void openWebsite(WebDriver driver, String link, Map<String, String> mapWithCommands) {
 
 		driver.get(link);
@@ -75,7 +64,18 @@ public class MyWebDriverOperator {
 			}
 		}
 	}
-	
+
+	public static String find(String any, String type) {
+		WebDriver driver = MyWebDriverOperator.driver;
+		if (type == "attr:title") {
+			return driver.findElement(By.xpath(any)).getAttribute("title");
+		} else if (type == "attr:href") {
+			return driver.findElement(By.xpath(any)).getAttribute("href");
+		} else {
+			return driver.findElement(By.xpath(any)).getText();
+		}
+	}
+
 	public static void closeWebDriver() {
 		MyWebDriverOperator.driver.close();
 	}

@@ -12,12 +12,12 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class MyWebDriverOperator {
 
-	private static WebDriver driver;
+	public static WebDriver driver;
 
-	private static WebDriver createWebDriver() {
+	public static void createWebDriver() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("enable-automation");
-		options.addArguments("--headless");
+//		options.addArguments("--headless");
 		options.addArguments("--window-size=1920,1080");
 		options.addArguments("--no-sandbox");
 		options.addArguments("--disable-extensions");
@@ -26,7 +26,7 @@ public class MyWebDriverOperator {
 		options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 		System.setProperty("webdriver.chrome.driver", "./src/main/resources/chrome-driver/chromedriver.exe");
 		WebDriver driver = new ChromeDriver(options);
-		return driver;
+		MyWebDriverOperator.driver = driver;
 	}
 
 	public static String find(String any, String type) {
@@ -74,5 +74,9 @@ public class MyWebDriverOperator {
 				System.out.println(wtf);
 			}
 		}
+	}
+	
+	public static void closeWebDriver() {
+		MyWebDriverOperator.driver.close();
 	}
 }

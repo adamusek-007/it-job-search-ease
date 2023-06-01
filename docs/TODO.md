@@ -1,12 +1,12 @@
 
 # How it works plan
 
-1. Check Is Database Driver Installed;
-	- If installed go further else exit(1);
-2. SetupConnectionWithDatabase;
-	- If Connection fails exit(2);
-3. GetBoardsDataFromDatabase;
-	- If result unreachable exit(3);
+~~1. Check Is Database Driver Installed;~~
+~~	- If installed go further else exit(1);~~
+~~2. SetupConnectionWithDatabase;~~
+~~	- If Connection fails exit(2);~~
+~~3. GetBoardsDataFromDatabase;~~
+~~	- If result unreachable exit(3);~~
 4. for(boards.count())
     1. Open the board job
     2. Do instructions that comes with board link

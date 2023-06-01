@@ -19,10 +19,10 @@ public class DatabaseOperator {
 //	protected static Map<String, String> jobBoardsData = new HashMap<>();
 //	protected static Set<String> jobBoardsNames = jobBoardsData.keySet();
 
-	public static ArrayList<Object> getBoardsDataFromDatabase() {
+	public static ArrayList<JobBoard> getBoardsDataFromDatabase() {
 		String boardsSelectingQuery = "SELECT * FROM `job_boards_info`";
 		ResultSet companiesWebsites = executeQueryReturn(boardsSelectingQuery);
-		ArrayList<Object> boardsData = new ArrayList<>();
+		ArrayList<JobBoard> boardsData = new ArrayList<>();
 		try {
 			while (companiesWebsites.next()) {
 				String name = companiesWebsites.getString("job_board_name");
@@ -33,6 +33,7 @@ public class DatabaseOperator {
 				JobBoard board = new JobBoard(idInt, name, link, instructions);
 				boardsData.add(board);
 			}
+			return boardsData;
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.exit(3);

@@ -13,11 +13,11 @@ import java.util.Set;
 public class DatabaseOperator {
 
 	private static Connection databaseConnection = null;
-	private static ResultSet companiesWebsites = null;
+	private static ResultSet jobBoards = null;
 
 	public static ArrayList<JobBoard> getBoardsDataFromDatabase() {
 		String boardsSelectingQuery = "SELECT * FROM `job_boards_info`";
-		companiesWebsites = executeQueryReturn(boardsSelectingQuery);
+		jobBoards = executeQueryReturn(boardsSelectingQuery);
 		ArrayList<JobBoard> boardsData = new ArrayList<>();
 		try {
 			return getArrayListOfBoards(boardsData);
@@ -30,13 +30,14 @@ public class DatabaseOperator {
 
 	private static ArrayList<JobBoard> getArrayListOfBoards(ArrayList<JobBoard> boardsData)
 			throws SQLException {
-		while (companiesWebsites.next()) {
-			String name = companiesWebsites.getString("job_board_name");
-			String link = companiesWebsites.getString("job_board_link");
-			String id = companiesWebsites.getString("job_board_id");
-			String instructions = companiesWebsites.getString("job_board_instructions");
-			int idInt = Integer.valueOf(id);
-			JobBoard board = new JobBoard(idInt, name, link, instructions);
+		while (jobBoards.next()) {
+			int id;
+			String  name, link, instructions;
+			id = jobBoards.getInt("job_board_id");
+			name = jobBoards.getString("job_board_name");
+			link = jobBoards.getString("job_board_link");
+			instructions = jobBoards.getString("job_board_instructions");
+			JobBoard board = new JobBoard(id, name, link, instructions);
 			boardsData.add(board);
 		}
 		return boardsData;
